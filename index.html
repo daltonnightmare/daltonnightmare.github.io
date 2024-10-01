@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tougma Wilfried - Développeur Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span id="animated-logo" class="text-2xl font-bold text-blue-600">NetBuilder</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#accueil" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Accueil</a>
+                    <a href="#projets" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Projets</a>
+                    <a href="#contact" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <svg class="w-6 h-6 text-gray-500 hover:text-blue-500"
+                            x-show="!showMenu"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li><a href="#accueil" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Accueil</a></li>
+                <li><a href="#projets" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Projets</a></li>
+                <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="accueil" class="gradient-bg text-white py-20 min-h-screen flex items-center pt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center mb-12">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="text-5xl font-bold mb-4" id="name">
+                        <span class="inline-block">T</span><span class="inline-block">o</span><span class="inline-block">u</span><span class="inline-block">g</span><span class="inline-block">m</span><span class="inline-block">a</span>
+                        <span class="inline-block ml-2">W</span><span class="inline-block">i</span><span class="inline-block">l</span><span class="inline-block">f</span><span class="inline-block">r</span><span class="inline-block">i</span><span class="inline-block">e</span><span class="inline-block">d</span>
+                    </h1>
+                    <h2 class="text-3xl mb-6" id="title">Développeur Web Full Stack</h2>
+                    <p class="mb-8" id="description">Passionné par la création de solutions web innovantes et performantes. Spécialisé dans le développement backend avec Python et Django, ainsi que dans la création d'interfaces utilisateur modernes et réactives.</p>
+                    <a href="#contact" class="bg-white text-blue-600 py-3 px-8 rounded-full font-bold hover:bg-blue-100 transition duration-300" id="cta">Me contacter</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="static/img/logo.jpg" alt="Tougma Wilfried" class="rounded-full w-64 h-64 mx-auto object-cover border-4 border-white shadow-lg" id="profile-pic">
+                </div>
+            </div>
+<section id="presentation" class="py-20 bg-gradient-to-b from-gray-50 to-white rounded-3xl shadow-lg mx-4 my-8">
+    <div class="container mx-auto px-4">
+        <h2 class="section-title text-4xl font-bold mb-16 text-center relative overflow-hidden py-4">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500 inline-block transform transition-transform duration-700 title-text">
+                À Propos de Moi
+            </span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-teal-500 transform scale-x-0 transition-transform duration-700 title-underline"></span>
+        </h2>
+
+        <div class="flex flex-col md:flex-row items-start gap-12">
+            <div class="md:w-1/3">
+                <img src="static/img/willy.jpg" alt="Tougma Wilfried" class="rounded-full w-64 h-64 object-cover mx-auto shadow-lg mb-8">
+            </div>
+            <div class="md:w-2/3">
+                <p class="text-lg mb-6 text-gray-800">Bonjour ! Je m'appelle <span class="font-semibold text-blue-600">Tougma Wilfried</span>. Je suis un créateur de sites web passionné. Mon travail ? Transformer vos idées en sites internet beaux et fonctionnels.</p>
+                
+                <p class="text-lg mb-6 text-gray-700">Je maîtrise à la fois la partie visible des sites (ce que vous voyez à l'écran) et la partie invisible (ce qui fait fonctionner le site en coulisses). Mon objectif est de créer des sites web qui sont à la fois <span class="font-semibold text-indigo-600">rapides, faciles à utiliser, et agréables à regarder</span>.</p>
+
+                <p class="text-lg mb-6 text-gray-800">Au fil des années, j'ai travaillé sur toutes sortes de projets : des petits sites personnels aux grandes boutiques en ligne. Chaque projet m'a permis d'apprendre de nouvelles choses et d'améliorer mes compétences.</p>
+
+                <p class="text-lg mb-6 text-gray-700">Ce que j'aime dans mon métier, c'est que je peux m'occuper de toutes les étapes de la création d'un site. De la première idée jusqu'à la mise en ligne, je suis là pour vous guider et réaliser votre projet.</p>
+
+                <p class="text-lg mb-6 text-gray-800">Pour moi, la <span class="font-semibold text-purple-600">communication</span> est très importante. J'aime travailler en équipe et échanger des idées. Je crois que les meilleurs sites naissent quand tout le monde travaille ensemble : les créateurs, les designers et les clients.</p>
+
+                <p class="text-lg mb-6 text-gray-700">Que vous soyez une petite entreprise qui démarre, une grande société qui veut moderniser son site, ou une association qui cherche à se faire connaître, je suis là pour vous aider. Mon approche est simple : je m'adapte à vos besoins pour créer le site qui vous convient le mieux.</p>
+
+                <p class="text-xl font-semibold mb-6 text-blue-700">Ensemble, donnons vie à votre projet de site web !</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="mt-12">
+    <h3 class="text-2xl font-bold mb-6 text-center">Mes Compétences</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <i class="fab fa-python text-4xl mb-2 text-blue-500"></i>
+            <h4 class="text-gray-800 font-semibold">Python</h4>
+        </div>
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <i class="fab fa-java text-4xl mb-2 text-red-500"></i>
+            <h4 class="text-gray-800 font-semibold">Java</h4>
+        </div>
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <i class="fas fa-code text-4xl mb-2 text-green-500"></i>
+            <h4 class="text-gray-800 font-semibold">C</h4>
+        </div>
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <i class="fab fa-js text-4xl mb-2 text-yellow-500"></i>
+            <h4 class="text-gray-800 font-semibold">JavaScript</h4>
+        </div>
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <i class="fab fa-html5 text-4xl mb-2 text-orange-500"></i>
+            <h4 class="text-gray-800 font-semibold">HTML</h4>
+        </div>
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <i class="fab fa-css3-alt text-4xl mb-2 text-blue-400"></i>
+            <h4 class="text-gray-800 font-semibold">CSS</h4>
+        </div>
+        <div class="skill-card bg-white p-4 rounded-lg shadow-md text-center">
+            <span class="text-4xl mb-2 text-green-600 font-bold">Django</span>
+        </div>
+    </div>
+</div>
+</div>
+</header>
+
+<section id="services" class="py-20 bg-gray-100">
+<div class="container mx-auto px-4">
+<h2 class="text-4xl font-bold mb-12 text-center relative">
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+        Mes Services
+    </span>
+    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></span>
+</h2>
+<p class="text-xl text-center mb-12">Vous rêvez d'un site professionnel, élégant et performant ? <br> <span class="font-bold">Tougma Wilfried</span> est là pour concrétiser votre vision digitale, peu importe votre secteur d'activité !</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+    <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+        <i class="fas fa-building text-4xl mb-4 text-blue-500"></i>
+        <h3 class="text-xl font-bold mb-2">Sites vitrines</h3>
+        <p>Mettez en valeur votre entreprise et gagnez en visibilité.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+        <i class="fas fa-shopping-cart text-4xl mb-4 text-green-500"></i>
+        <h3 class="text-xl font-bold mb-2">Sites e-commerce</h3>
+        <p>Boostez vos ventes en ligne avec une plateforme sécurisée et intuitive.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+        <i class="fas fa-blog text-4xl mb-4 text-purple-500"></i>
+        <h3 class="text-xl font-bold mb-2">Blogs & portfolios</h3>
+        <p>Partagez vos idées, projets et passions avec le monde entier.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+        <i class="fas fa-cogs text-4xl mb-4 text-red-500"></i>
+        <h3 class="text-xl font-bold mb-2">Sites personnalisés</h3>
+        <p>Nous créons des solutions uniques pour répondre à vos besoins spécifiques.</p>
+    </div>
+</div>
+
+<h3 class="text-2xl font-bold mb-6 text-center">Pourquoi me choisir ?</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <div class="flex items-start">
+        <i class="fas fa-mobile-alt text-2xl text-blue-500 mr-4 mt-1"></i>
+        <div>
+            <h4 class="font-bold mb-2">Design moderne et responsive</h4>
+            <p>Un site impeccable sur mobile, tablette et ordinateur.</p>
+        </div>
+    </div>
+    <div class="flex items-start">
+        <i class="fas fa-search text-2xl text-blue-500 mr-4 mt-1"></i>
+        <div>
+            <h4 class="font-bold mb-2">Référencement SEO</h4>
+            <p>Attirez plus de visiteurs et démarquez-vous de la concurrence.</p>
+        </div>
+    </div>
+    <div class="flex items-start">
+        <i class="fas fa-headset text-2xl text-blue-500 mr-4 mt-1"></i>
+        <div>
+            <h4 class="font-bold mb-2">Support technique</h4>
+            <p>Assistance rapide et continue après la mise en ligne.</p>
+        </div>
+    </div>
+    <div class="flex items-start">
+        <i class="fas fa-rocket text-2xl text-blue-500 mr-4 mt-1"></i>
+        <div>
+            <h4 class="font-bold mb-2">Livraison rapide</h4>
+            <p>Votre site prêt en un temps record.</p>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <p class="text-xl mb-6">Passez au niveau supérieur et développez votre présence en ligne dès aujourd'hui !</p>
+    <a href="#contact" class="bg-blue-600 text-white py-3 px-8 rounded-full font-bold hover:bg-blue-700 transition duration-300">Me contacter</a>
+</div>
+</div>
+</section>
+
+<main class="container mx-auto px-4 py-12">
+
+<section id="projets" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4">
+        <h2 class="section-title text-4xl font-bold mb-16 text-center relative overflow-hidden py-4">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500 inline-block transform transition-transform duration-700 title-text">
+                quelques uns de mes Projets
+            </span>
+            <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-teal-500 transform scale-x-0 transition-transform duration-700 title-underline"></span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Projet 1 : Site E-commerce -->
+            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-xl">
+                <img src="static/img/Ecom.jpg" alt="Site E-commerce" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Site E-commerce</h3>
+                    <p class="text-gray-600 mb-4">Développement d'une plateforme e-commerce complète pour une boutique de mode. Fonctionnalités incluant un catalogue de produits, un panier d'achat, un système de paiement sécurisé et un espace client personnalisé. L'accent a été mis sur l'expérience utilisateur et la performance pour assurer des temps de chargement rapides.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Django</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">JavaScript</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">PostgreSQL</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Projet 2 : Application de Gestion de Projet -->
+            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-xl">
+                <img src="static/img/Gestiondeproj.jpg" alt="Application de Gestion de Projet" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Application de Gestion de Projet</h3>
+                    <p class="text-gray-600 mb-4">Conception et développement d'une application web de gestion de projet intuitive. Caractéristiques principales : création de tâches, attribution de responsabilités, suivi de l'avancement, gestion des délais et reporting en temps réel. L'application offre une interface utilisateur réactive et des tableaux de bord personnalisables.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Django</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Javascript</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">MySQL</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Projet 3 : Plateforme de E-learning -->
+            <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-xl">
+                <img src="static/img/Elearning.jpg" alt="Plateforme de E-learning" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Plateforme de E-learning</h3>
+                    <p class="text-gray-600 mb-4">Création d'une plateforme de e-learning interactive pour une institution éducative. La plateforme comprend des fonctionnalités telles que la gestion des cours, le suivi des progrès des étudiants, des quiz interactifs et un forum de discussion. Une attention particulière a été portée à l'accessibilité et à l'adaptabilité sur différents appareils.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Python</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Django</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">SQlite</span>
+                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">AWS</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="glass-effect p-8 mb-20">
+    <h2 class="text-4xl font-bold mb-12 text-center relative">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+            Me Contacter
+        </span>
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></span>
+    </h2>
+    <div class="flex flex-col md:flex-row gap-8">
+        <div class="md:w-1/2">
+            <form action="https://formspree.io/f/xdknqyjo" method="POST" class="space-y-4">
+                
+                <div>
+                    <label for="name" class="block mb-2">Nom</label>
+                    <input type="text" id="name" name="nom" required class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-3 py-2 border rounded-lg">
+                </div>
+                <div>
+                    <label for="message" class="block mb-2">Message</label>
+                    <textarea id="message" name="message" required class="w-full px-3 py-2 border rounded-lg" rows="4"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-3 px-8 rounded-full font-bold hover:bg-blue-700 transition duration-300">Envoyer</button>
+            </form>
+        </div>
+        <div class="md:w-1/2 flex flex-col justify-center items-center">
+            <p class="text-xl mb-4">Ou contactez-moi directement sur WhatsApp</p>
+            <a href="https://wa.me/+22653754080" target="_blank" class="bg-green-500 text-white py-3 px-8 rounded-full font-bold hover:bg-green-600 transition duration-300">
+                <i class="fab fa-whatsapp mr-2"></i>Discuter sur WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-between">
+        <div class="w-full md:w-1/3 mb-6 md:mb-0">
+            <h3 class="text-2xl font-bold mb-4">Tougma Wilfried</h3>
+            <p class="mb-4">Développeur Web passionné, créant des solutions innovantes et performantes.</p>
+            <div class="flex space-x-4">    
+                <a href="https://github.com/daltonnightmare" class="text-white hover:text-blue-400 transition duration-300"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+        </div>
+        <div class="w-full md:w-1/3 mb-6 md:mb-0">
+            <h3 class="text-xl font-bold mb-4">Liens Rapides</h3>
+            <ul class="space-y-2">
+                <li><a href="#accueil" class="hover:text-blue-400 transition duration-300">Accueil</a></li>
+                <li><a href="#projets" class="hover:text-blue-400 transition duration-300">Projets</a></li>
+                <li><a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a></li>
+            </ul>
+        </div>
+        <div class="w-full md:w-1/3">
+            <h3 class="text-xl font-bold mb-4">Contact</h3>
+            <p class="mb-2"><i class="fas fa-envelope mr-2"></i> tougmawilfried87@gmail.com</p>
+            <p class="mb-2"><i class="fas fa-phone mr-2"></i> +226 53 75 40 80</p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i> Burkina Faso/Ouagadougou</p>
+        </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p>&copy; 2023 Tougma Wilfried. Tous droits réservés.</p>
+    </div>
+</div>
+</footer>
+
+<script src="static/js/index.js"></script>
+<script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.ok) {
+            alert('Merci ! Votre message a été envoyé avec succès.');
+            this.reset();
+        } else {
+            alert('Oups ! Une erreur est survenue. Veuillez réessayer.');
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+        alert('Oups ! Une erreur est survenue. Veuillez réessayer.');
+    });
+});
+</script>
+</body>
+</html>
